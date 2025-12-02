@@ -122,7 +122,7 @@ proyecto_bolsa_concurrencia/
 
 ---
 
-## 4. Explicación exhaustiva de cada archivo
+## 4. Explicación de cada archivo
 
 ### ▶ `scraping_cotizacion.py`
 **Función:**  
@@ -227,6 +227,66 @@ python src/main.py
 
 ---
 
+## 8. ¿Qué son los logs y para qué sirven en este proyecto?
+
+Los *logs* son archivos donde el programa va registrando todo lo que ocurre durante la ejecución: acciones, errores, avisos y resultados intermedios.  
+Permiten:
+
+- detectar errores sin detener la ejecución,
+- entender qué ocurrió en cada fase del proceso,
+- depurar problemas de scraping o concurrencia,
+- verificar que los hilos han trabajado correctamente,
+- mantener un historial de ejecuciones.
+
+En este proyecto se generan **tres logs principales**, cada uno asociado a un módulo del sistema:
+
+### **• `cotizaciones.log`**  
+Registra todos los pasos del scraping de cotizaciones del índice IGBM.  
+Incluye:  
+- descargas de HTML,  
+- problemas de conexión,  
+- número de empresas detectadas,  
+- archivo CSV generado.
+
+### **• `finanzas.log`**  
+Registra la ejecución **concurrente** del scraping financiero.  
+Incluye:  
+- inicio y final de cada hilo,  
+- errores individuales por empresa,  
+- acceso a la base de datos SQLite,  
+- datos extraídos del “Resumen financiero”.
+
+Este log es especialmente útil para comprobar que:  
+- los hilos no se pisan entre sí,  
+- el semáforo limita la concurrencia correctamente,  
+- el `Lock` evita condiciones de carrera al escribir en la BD.
+
+### **• `analisis.log`**  
+Registra toda la parte de análisis financiero.  
+Incluye:  
+- unión de datasets,  
+- cálculos de ratios,  
+- clasificación de señales,  
+- recomendaciones generadas,  
+- exportación a CSV y Excel.
+
+---
+
+### ¿Por qué son importantes en un proyecto con concurrencia?
+
+Cuando se usan hilos, varios procesos ocurren al mismo tiempo y el programa puede volverse difícil de seguir.  
+Los logs permiten:
+
+- saber qué hilo falló,  
+- entender cuándo ocurrió un problema y por qué,  
+- reproducir errores,  
+- garantizar la integridad de la base de datos,  
+- asegurar que el flujo completo funciona sin interferencias.
+
+Gracias a los logs, el proyecto se vuelve **auditado, trazable y mucho más profesional**.
+
+---
+
 
 ## Sistema de recomendación
 
@@ -261,3 +321,6 @@ Este proyecto demuestra:
 - Análisis financiero multithreading.
 - Exportación a CSV + Excel.
 - Registro completo del sistema mediante logs.
+
+
+ 
