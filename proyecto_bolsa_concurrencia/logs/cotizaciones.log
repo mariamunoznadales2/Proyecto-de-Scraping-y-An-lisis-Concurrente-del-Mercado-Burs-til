@@ -1,0 +1,28 @@
+2025-12-02 18:57:04 [INFO] === INICIANDO PIPELINE COMPLETO ===
+2025-12-02 18:57:04 [INFO] Ejecutando scraping de cotizaciones
+2025-12-02 18:57:04 [INFO] Iniciando scraping de cotizaciones
+2025-12-02 18:57:05 [INFO] HTML descargado
+2025-12-02 18:57:05 [INFO] Filas extraídas: 121
+2025-12-02 18:57:05 [INFO] Archivo limpio PROCESSED guardado en processed/cotizaciones_limpias.csv
+2025-12-02 18:57:05 [INFO] Ejecutando scraping financiero concurrente
+2025-12-02 18:57:05 [INFO] Procesando BBVA
+2025-12-02 18:57:05 [INFO] Procesando CaixaBank
+2025-12-02 18:57:05 [INFO] Procesando Iberdrola
+2025-12-02 18:57:06 [INFO] Datos guardados para CaixaBank
+2025-12-02 18:57:06 [INFO] Procesando Endesa
+2025-12-02 18:57:06 [INFO] Datos guardados para BBVA
+2025-12-02 18:57:06 [INFO] Procesando Repsol
+2025-12-02 18:57:06 [INFO] Datos guardados para Iberdrola
+2025-12-02 18:57:06 [INFO] Procesando Telefónica
+2025-12-02 18:57:07 [INFO] Datos guardados para Repsol
+2025-12-02 18:57:07 [INFO] Procesando Inditex
+2025-12-02 18:57:07 [INFO] Datos guardados para Endesa
+2025-12-02 18:57:07 [INFO] Procesando AENA
+2025-12-02 18:57:07 [INFO] Datos guardados para Telefónica
+2025-12-02 18:57:07 [INFO] Datos guardados para AENA
+2025-12-02 18:57:07 [INFO] Datos guardados para Inditex
+2025-12-02 18:57:07 [INFO] Archivo PROCESSED generado
+2025-12-02 18:57:07 [INFO] Ejecutando análisis de datos
+2025-12-02 18:57:07 [INFO] Iniciando análisis MULTITHREADING
+2025-12-02 18:57:08 [INFO] Análisis MULTITHREADING completado. CSV: analysis/analisis_resultados_20251202.csv | Excel: analysis/analisis_resultados.xlsx
+2025-12-02 18:57:08 [INFO] Pipeline completado. Resultados en: analysis/analisis_resultados_20251202.csv
